@@ -74,7 +74,7 @@ fun WarningDialog() {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         TextButton(onClick = {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://aingaran.dev/how-to/android-radio-info"))
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://aingaran.dev/products/network-mode-selector"))
                             context.startActivity(intent)
                         }) {
                             Text("Help me understand the configuration")
@@ -146,6 +146,7 @@ fun openRadioInfo(context: Context) {
 
     try {
         context.startActivity(intent)
+        (context as ComponentActivity).finish()
     } catch (e: ActivityNotFoundException) {
         Toast.makeText(context, "Unable to open Network Settings. Please check your device settings.", Toast.LENGTH_LONG).show()
     }
