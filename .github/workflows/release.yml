@@ -22,7 +22,7 @@ jobs:
 
       - name: Sign APK
         id: sign_app
-        uses: ilharp/sign-android-release@v2 # Use v2 as v1 is deprecated
+        uses: ilharp/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
