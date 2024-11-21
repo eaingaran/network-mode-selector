@@ -74,7 +74,10 @@ fun WarningDialog() {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         TextButton(onClick = {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://aingaran.dev/products/network-mode-selector"))
+                            val url = "https://aingaran.dev/products/network-mode-selector" +
+                                    "?utm_source=android_app" +
+                                    "&utm_medium=help_button"
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                             context.startActivity(intent)
                         }) {
                             Text("Help me understand the configuration")
@@ -103,7 +106,7 @@ fun WarningDialog() {
                     isLoading = true // Show loading indicator
                     openRadioInfo(context)
                 },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50))) {
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))) {
                     Text("I understand")
                 }
             },
@@ -112,7 +115,7 @@ fun WarningDialog() {
                     showWarningDialog = false
                     (context as ComponentActivity).finish()
                 },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE57373))) {
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFC62828))) {
                     Text("Take me back")
                 }
             }
